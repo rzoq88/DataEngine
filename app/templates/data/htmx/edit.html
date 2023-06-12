@@ -1,0 +1,28 @@
+<div>
+    {% include 'snippets/form_errors.html' %}
+    
+    <form method='POST' action='/data/{{ object.item_id }}/edit' hx-post='/data/{{ object.item_id }}/hx-edit'>
+        <div>
+            <label for='title'>Title</label>
+            <input class='form-control' type='text' name='title' id='title' 
+            required='required'
+            placeholder=' Title' value="{% if object.title %}{{ object.title }}{% endif %}" />
+        </div>
+
+        <div>
+            <label for='url'> url</label>
+            <input  class='form-control' type='text' name='url' id='url' 
+            required='required'
+            placeholder='url' value="{% if object.url %}{{ object.url }}{% endif %}" />
+        </div>
+
+        <div>
+            <label for='delete'>
+                <input  type='checkbox' name='delete' id='delete' /> Delete?
+            </label>
+        </div>
+        
+        <button class='btn btn-primary mt-2' type='submit' >Save</button>
+        
+    </form>
+</div>

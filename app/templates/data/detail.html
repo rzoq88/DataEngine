@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class='row'>
+
+
+</div>
+<div  style="  display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 50vh; /* Adjust the height as needed */">
+    
+    {% if object.item_id %} 
+    <h6>email:      {{ object.email }}</h6>
+    <h6>password:   {{ object.password }}</h6>
+    <h6>{% if object.hashpassword != 'None' %} hashpassword:   {{ object.hashpassword }}{% endif %}</h6>
+    <h6>firstname:   {{ object.firstname }}</h6>
+    <h6>lastname:   {{ object.lastname }}</h6>
+    <h6>address:   {{ object.address }}</h6>
+    <h6>item_id:   {{ object.item_id }}</h6>
+    <h6>source_name:   {{ object.source_name }}</h6>
+    <h6>country:   {{ object.country }}</h6>
+
+    <h6>ip:   {{ object.ip }}</h6>
+    {% endif %}
+
+</div>
+</div>
+
+
+
+{% endblock %}
+
+

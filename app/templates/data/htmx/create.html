@@ -1,0 +1,22 @@
+<div>
+    {% include 'snippets/form_errors.html' %}
+    
+    <form method='POST' action='/data/create' hx-post='/data/create'>
+        <div>
+            <label for='title'>title</label>
+            <input class='form-control' type='text' name='title' id='title' 
+            required='required'
+            placeholder='file title' value="{% if title %}{{ title }}{% endif %}" />
+        </div>
+
+        <div>
+            <label for='url'>file url</label>
+            <input class='form-control'  type='text' name='url' id='url' 
+            required='required'
+            placeholder='file url' value="{% if url %}{{ url }}{% endif %}" />
+        </div>
+
+        <button class='btn btn-primary mt-2' type='submit' >Add Data</button>
+        
+    </form>
+</div>

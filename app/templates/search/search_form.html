@@ -1,0 +1,14 @@
+
+<div class="d-flex justify-content-center" >
+
+  <form class="d-flex" action='/search'>
+    <input class="form-control me-2" type="search" id="myInput" placeholder="Search" aria-label="Search" name='q'
+    value='{% if request.query_params.get("q") and "/search" in request.path %}{{ request.query_params.get("q") }} {% endif %}'>
+    <button class="btn btn-outline-success" type="submit" onsubmit="submitForm(event)">Search</button>
+    
+  </form>
+  
+  <button class="btn btn-outline-success "  id="toggleBtn">Advanced</button>
+</div>
+
+

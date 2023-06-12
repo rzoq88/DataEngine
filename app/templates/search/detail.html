@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome | {{ super() }} {% endblock %}
+
+
+{% block content %}
+
+<div class='text-center col-md-4 col-sm-6 col-12 mx-auto'>
+  <h3>Found {{ num_hits }} for {{ query }}</h3>
+  <div id="normalsearch">
+
+    {% include 'search/search_form.html' %}
+  </div>
+</div>
+
+
+<div id="content">
+  {% include 'search/advanced_search.html' %}
+</div>
+<div class='text-center col-md-4 col-sm-6 col-12 mx-auto'>
+  <div class="list-group mt-3">
+    {% for hit in hits %}
+    <a href="{{ hit['path'] }}" class="list-group-item list-group-item-action">{{ hit['email'] }} <small
+        class='text-muted'>{{ hit['password'] }}{{ hit['title'] }}</small></a>
+    {% endfor %}
+  </div>
+
+
+
+
+</div>
+
+{% endblock %}

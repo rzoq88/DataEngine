@@ -1,0 +1,13 @@
+
+<div class="d-flex justify-content-center py-4">
+    <form class="d-flex flex-column w-25 align-items-sm-center gap-1 " action='/search/add'>
+        <input class="form-control me-2 my-1" type="search" id="myInput" placeholder="email" aria-label="Search" name='q1'
+        value='{% if request.query_params.get("q1") and "/search/add" in request.path %}{{ request.query_params.get("q1") }} {% endif %}'>
+        <input class="form-control me-2 my-1" type="search" id="myInput" placeholder="password" aria-label="Search" name='q2'
+        value='{% if request.query_params.get("q2") and "/search/add" in request.path %}{{ request.query_params.get("q2") }} {% endif %}'>
+        <input class="form-control me-2 my-1" type="search" id="myInput" placeholder="ip" aria-label="Search" name='q3'
+        value='{% if request.query_params.get("q3") and "/search/add" in request.path %}{{ request.query_params.get("q3") }} {% endif %}'>
+        <button class="btn btn-outline-success my-1 " type="submit" onsubmit="submitForm(event)">Advanced Search</button>
+
+    </form>
+</div>

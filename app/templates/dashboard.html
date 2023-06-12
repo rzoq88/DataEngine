@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome | {{ super() }} {% endblock %}
+
+
+{% block content %}
+
+
+    <div class='text-center col-md-4 col-sm-6 col-12 mx-auto'>
+        <h1>Welcome back user!</h1>
+        
+        <!-- <h3>Search for content</h3>
+        <div id="normalsearch" >
+            
+            {% include 'search/search_form.html' %}
+        </div> -->
+    </div>
+
+    <div id="content">
+    {% include 'search/advanced_search.html' %}
+</div>
+
+
+
+{% endblock %}

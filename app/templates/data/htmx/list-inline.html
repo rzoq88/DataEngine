@@ -1,0 +1,12 @@
+<div id='data-inline-edit-{{ object.item_id }}'>
+    <a href="{{ object.path }}">
+    {% if not object.title %}{{ object.item_id }}{% else %}<span>{{object.email}}{% endif %}
+    </a>
+    <button 
+        class='btn btn-sm btn-outline-secondary mx-2'
+        hx-get='/data/{{ object.item_id }}/hx-edit' 
+        hx-target='#data-inline-edit-{{ object.item_id }}'
+        >
+        Edit
+    </button>
+</div>
